@@ -3,7 +3,7 @@ namespace RestauChoice.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class createDatabase : DbMigration
+    public partial class testDatabase : DbMigration
     {
         public override void Up()
         {

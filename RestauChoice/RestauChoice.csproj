@@ -163,14 +163,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809241820197_createDatabase.cs" />
-    <Compile Include="Migrations\201809241820197_createDatabase.Designer.cs">
-      <DependentUpon>201809241820197_createDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201809242033599_testDatabase.cs" />
+    <Compile Include="Migrations\201809242033599_testDatabase.Designer.cs">
+      <DependentUpon>201809242033599_testDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Dal.cs" />
     <Compile Include="Models\Evenement.cs" />
+    <Compile Include="Models\IDal.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\TheUser.cs" />
     <Compile Include="Models\TheType.cs" />
@@ -252,6 +254,7 @@
     <Content Include="Views\TheTypes\Details.cshtml" />
     <Content Include="Views\TheTypes\Edit.cshtml" />
     <Content Include="Views\TheTypes\Index.cshtml" />
+    <Content Include="Views\Home\Connection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -270,8 +273,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809241820197_createDatabase.resx">
-      <DependentUpon>201809241820197_createDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809242033599_testDatabase.resx">
+      <DependentUpon>201809242033599_testDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
