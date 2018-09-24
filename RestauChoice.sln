@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestauChoice", "RestauChoice\RestauChoice.csproj", "{84FBB66A-AA23-452E-A882-72B874A268A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestauChoice.Tests", "RestauChoice.Tests\RestauChoice.Tests.csproj", "{3E2915B8-9FFD-4B57-88A1-6369B7B40657}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84FBB66A-AA23-452E-A882-72B874A268A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84FBB66A-AA23-452E-A882-72B874A268A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84FBB66A-AA23-452E-A882-72B874A268A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84FBB66A-AA23-452E-A882-72B874A268A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2915B8-9FFD-4B57-88A1-6369B7B40657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2915B8-9FFD-4B57-88A1-6369B7B40657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2915B8-9FFD-4B57-88A1-6369B7B40657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2915B8-9FFD-4B57-88A1-6369B7B40657}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC9676D1-3777-491B-8585-9467E1B43BEE}
+	EndGlobalSection
+EndGlobal
