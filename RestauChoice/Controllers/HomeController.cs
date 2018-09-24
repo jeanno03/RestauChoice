@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestauChoice.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,16 @@ namespace RestauChoice.Controllers
 {
     public class HomeController : Controller
     {
+        private AppDbContext db = new AppDbContext();
+
         public ActionResult Index()
         {
+            TheUser th01 = new TheUser("login", "mdp", "nom", "prenom");         
+            Visitor vi01 = new Visitor("login", "mdp");
+
+            db.TheUsers.Add(th01);
+            db.Visitors.Add(vi01);
+            db.SaveChanges();
             return View();
         }
 

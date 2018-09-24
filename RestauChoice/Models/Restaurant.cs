@@ -12,7 +12,7 @@ namespace RestauChoice.Models
         public string Adresse { get; set; }
         public virtual ICollection<Vote> Votes { get; set; }
         public virtual ICollection<Evenement> Evenements { get; set; }
-        public virtual Type Type { get; set; }
+        public virtual TheType TheType { get; set; }
 
         public Restaurant()
         {

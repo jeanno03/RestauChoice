@@ -12,7 +12,7 @@ namespace RestauChoice.Models
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Evenement> Evenements { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
-        public DbSet<Type> Types { get; set; }
+        public DbSet<TheType> Types { get; set; }
         public DbSet<Visitor> Visitors { get; set; }
         public DbSet<Vote> Votes { get; set; }
     }

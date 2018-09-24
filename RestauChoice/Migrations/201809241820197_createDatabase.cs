@@ -3,7 +3,7 @@ namespace RestauChoice.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateDatabase : DbMigration
+    public partial class createDatabase : DbMigration
     {
         public override void Up()
         {
@@ -43,20 +43,20 @@ namespace RestauChoice.Migrations
                         RestaurantId = c.Int(nullable: false, identity: true),
                         Nom = c.String(),
                         Adresse = c.String(),
-                        Type_TypeId = c.Int(),
+                        TheType_TheTypeId = c.Int(),
                     })
                 .PrimaryKey(t => t.RestaurantId)
-                .ForeignKey("dbo.Types", t => t.Type_TypeId)
-                .Index(t => t.Type_TypeId);
+                .ForeignKey("dbo.TheTypes", t => t.TheType_TheTypeId)
+                .Index(t => t.TheType_TheTypeId);
             
             CreateTable(
-                "dbo.Types",
+                "dbo.TheTypes",
                 c => new
                     {
-                        TypeId = c.Int(nullable: false, identity: true),
+                        TheTypeId = c.Int(nullable: false, identity: true),
                         Nom = c.String(),
                     })
-                .PrimaryKey(t => t.TypeId);
+                .PrimaryKey(t => t.TheTypeId);
             
             CreateTable(
                 "dbo.Votes",
@@ -113,7 +113,7 @@ namespace RestauChoice.Migrations
             DropForeignKey("dbo.Comments", "TheUser_VisitorId", "dbo.Visitors");
             DropForeignKey("dbo.Votes", "Restaurant_RestaurantId", "dbo.Restaurants");
             DropForeignKey("dbo.Votes", "Evenement_EvenementId", "dbo.Evenements");
-            DropForeignKey("dbo.Restaurants", "Type_TypeId", "dbo.Types");
+            DropForeignKey("dbo.Restaurants", "TheType_TheTypeId", "dbo.TheTypes");
             DropForeignKey("dbo.RestaurantEvenements", "Evenement_EvenementId", "dbo.Evenements");
             DropForeignKey("dbo.RestaurantEvenements", "Restaurant_RestaurantId", "dbo.Restaurants");
             DropForeignKey("dbo.Comments", "Evenement_EvenementId", "dbo.Evenements");
@@ -122,14 +122,14 @@ namespace RestauChoice.Migrations
             DropIndex("dbo.Votes", new[] { "TheUser_VisitorId" });
             DropIndex("dbo.Votes", new[] { "Restaurant_RestaurantId" });
             DropIndex("dbo.Votes", new[] { "Evenement_EvenementId" });
-            DropIndex("dbo.Restaurants", new[] { "Type_TypeId" });
+            DropIndex("dbo.Restaurants", new[] { "TheType_TheTypeId" });
             DropIndex("dbo.Evenements", new[] { "TheUser_VisitorId" });
             DropIndex("dbo.Comments", new[] { "TheUser_VisitorId" });
             DropIndex("dbo.Comments", new[] { "Evenement_EvenementId" });
             DropTable("dbo.RestaurantEvenements");
             DropTable("dbo.Visitors");
             DropTable("dbo.Votes");
-            DropTable("dbo.Types");
+            DropTable("dbo.TheTypes");
             DropTable("dbo.Restaurants");
             DropTable("dbo.Evenements");
             DropTable("dbo.Comments");

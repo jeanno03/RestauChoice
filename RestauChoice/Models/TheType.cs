@@ -5,18 +5,18 @@ using System.Web;
 
 namespace RestauChoice.Models
 {
-    public class Type
+    public class TheType
     {
-        public int TypeId  { get; set; }
+        public int TheTypeId  { get; set; }
         public string Nom  { get; set; }
         public virtual ICollection<Restaurant> Restaurants { get; set; }
 
-        public Type()
+        public TheType()
         {
             this.Restaurants = new HashSet<Restaurant>();
         }
 
-        public Type(string nom)
+        public TheType(string nom)
         {
             Nom = nom;
         }

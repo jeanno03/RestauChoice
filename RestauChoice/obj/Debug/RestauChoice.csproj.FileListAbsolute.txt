@@ -100,5 +100,5 @@ c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\Re
 c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.CopyComplete
 c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.dll
 c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.pdb
-c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.CreateDatabase.resources
-c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.GenerateResource.cache
+C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.createDatabase.resources
+C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.GenerateResource.cache
