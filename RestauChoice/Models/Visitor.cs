@@ -14,9 +14,9 @@ namespace RestauChoice.Models
         //private string mdp;
 
         public int VisitorId { get; set; }
-        //[Required(ErrorMessage ="Le Login est obligatoire")]
+        [Required(ErrorMessage = "Le Login est obligatoire")]
         public string Login { get; set; }
-        //[Required(ErrorMessage ="Le mot de passe est obligatoire")]
+        [Required(ErrorMessage = "Le mot de passe est obligatoire")]
         public string Mdp { get; set; }
 
 

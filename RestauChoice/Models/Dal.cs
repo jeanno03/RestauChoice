@@ -15,6 +15,13 @@ namespace RestauChoice.Models
             bdd = new AppDbContext();
         }
 
+        public void Dispose()
+        {
+            bdd.Dispose();
+        }
+
+
+
         public void TestVote()
         {
             DateTime da = DateTime.Now;
@@ -26,9 +33,21 @@ namespace RestauChoice.Models
             bdd.SaveChanges();
         }
 
-        public void Dispose()
+        public void EssaiRetau()
         {
-            bdd.Dispose();
+            Restaurant re01 = new Restaurant("restau 01", "Paris");
+            Restaurant re02 = new Restaurant("restau 02", "Marseille");
+            Restaurant re03 = new Restaurant("restau 03", "Lyon");
+            bdd.Restaurants.Add(re01);
+            bdd.Restaurants.Add(re02);
+            bdd.Restaurants.Add(re03);
+            bdd.SaveChanges();
         }
+
+        public List<Restaurant> GetRestaurants()
+        {
+            return bdd.Restaurants.ToList();
+        }
+
     }
 }

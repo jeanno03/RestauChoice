@@ -3,7 +3,7 @@ namespace RestauChoice.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class testDatabase : DbMigration
+    public partial class CreateDatabase : DbMigration
     {
         public override void Up()
         {
@@ -41,8 +41,8 @@ namespace RestauChoice.Migrations
                 c => new
                     {
                         RestaurantId = c.Int(nullable: false, identity: true),
-                        Nom = c.String(),
-                        Adresse = c.String(),
+                        Nom = c.String(nullable: false),
+                        Adresse = c.String(nullable: false),
                         TheType_TheTypeId = c.Int(),
                     })
                 .PrimaryKey(t => t.RestaurantId)
@@ -82,8 +82,8 @@ namespace RestauChoice.Migrations
                 c => new
                     {
                         VisitorId = c.Int(nullable: false, identity: true),
-                        Login = c.String(),
-                        Mdp = c.String(),
+                        Login = c.String(nullable: false),
+                        Mdp = c.String(nullable: false),
                         TheUserId = c.Int(),
                         Nom = c.String(),
                         Prenom = c.String(),

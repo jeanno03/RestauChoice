@@ -9,5 +9,7 @@ namespace RestauChoice.Models
     interface IDal:IDisposable
     {
         void TestVote();
+        void EssaiRetau();
+        List<Restaurant> GetRestaurants();
     }
 }

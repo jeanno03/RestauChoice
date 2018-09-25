@@ -1,0 +1,52 @@
+﻿@*@model List<RestauChoice.Models.Restaurant>*@
+@*@model IEnumerable<RestauChoice.Models.Restaurant>*@
+@{
+    ViewBag.Title = "Resto";
+}
+
+<h2>Resto</h2>
+
+<ul>
+    <li>@ViewData["message"]</li>
+    <li>@(((DateTime)ViewData["date"]).ToString("dd/MM/yyyy"))</li>
+    <li>@(((RestauChoice.Models.Restaurant)ViewData["resto"]).Nom)</li>
+    <li>@(((RestauChoice.Models.Restaurant)ViewData["resto"]).Adresse)</li>
+</ul>
+
+<div>
+    Je suis la vue index
+</div>
+<ul>
+    <li>@ViewData["message"]</li>
+    <li>@(((DateTime)ViewData["date"]).ToString("dd/MM/yyyy"))</li>
+    @{
+        RestauChoice.Models.Restaurant resto = (RestauChoice.Models.Restaurant)ViewData["resto"];
+    }
+    <li>@resto.Nom</li>
+    <li>@resto.Adresse</li>
+</ul>
+
+
+
+@*<table>
+        <tr>
+            <th>
+                Nom
+            </th>
+            <th>
+                Adresse
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresse)
+                </td>
+            </tr>
+        }
+    </table>*@
+

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model RestauChoice.ViewModels.AccueilViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -11,6 +12,79 @@
 <p>
     @Html.ActionLink("Se Connecter", "Connection")
 </p>
+
+<div>
+    Je suis la vue index
+</div>
+<ul>
+    <li>@Model.Message</li>
+    <li>@Model.Date.ToString("dd/MM/yyyy")</li>
+    <li>@Model.Resto.Nom</li>
+    <li>@Model.Resto.Adresse</li>
+</ul>
+
+<div>Je suis la vue index</div>
+<input type="text" id="nom" value="@Model.Resto.Nom" />
+<input type="text" id="adresse" value="@Model.Resto.Adresse" />
+<input type="submit" value="Envoyer" />
+
+<div>Je suis la vue index</div>
+@Html.TextBox("nom", Model.Resto.Nom, new { style = "color:red" })
+@Html.TextBox("adresse", Model.Resto.Adresse)
+<input type="submit" value="Envoyer" />
+
+<div>Je suis la vue index</div>
+@{Html.BeginForm("Index", "Home");}
+@Html.Label("estMajeur", "Cochez la case si vous êtes <strong>majeur</strong>")
+@Html.CheckBox("estMajeur", true)
+<input type="submit" value="Envoyer" />
+@{Html.EndForm();}
+
+<div>Je suis la vue index</div>
+@{Html.BeginForm("Index02", "Home", FormMethod.Get);}
+@Html.Label("estMajeur", "Cochez la case si vous êtes <strong>majeur</strong>")
+@Html.CheckBox("estMajeur", true)
+<input type="submit" value="Envoyer" />
+@{Html.EndForm();}
+
+
+<div>Je suis la vue index</div>
+@using (Html.BeginForm("Index", "Home"))
+{
+    @Html.Label("estMajeur", "Cochez la case si vous êtes majeur")
+    @Html.CheckBox("estMajeur", true)
+    <input type="submit" value="Envoyer" />
+}
+
+<div>Je suis la vue index lambda</div>
+@Html.LabelFor(model => model.Resto.Nom)
+@Html.TextBoxFor(model => model.Resto.Nom, new { style = "color:red" })
+@Html.LabelFor(model => model.Resto.Adresse)
+@Html.TextBoxFor(model => model.Resto.Adresse)
+<input type="submit" value="Envoyer" />
+
+
+
+<table>
+    <tr>
+        <th>
+            Nom
+        </th>
+        <th>
+            Adresse
+        </th>
+    </tr>
+    @{
+        foreach (var resto in Model.ListeDesRestos)
+        {
+            <tr>
+                <td>@resto.Nom</td>
+                <td>@resto.Adresse</td>
+            </tr>
+        }
+    }
+
+</table>
 
 <div class="row">
     <div class="col-md-4">

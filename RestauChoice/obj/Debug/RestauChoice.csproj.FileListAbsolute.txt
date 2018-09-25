@@ -100,8 +100,6 @@ c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\Re
 c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.CopyComplete
 c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.dll
 c:\users\mini pc jeannory 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.pdb
-C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.createDatabase.resources
-C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.GenerateResource.cache
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\bin\ApplicationInsights.config
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\bin\RestauChoice.dll.config
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\bin\RestauChoice.dll
@@ -206,3 +204,6 @@ C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoic
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.pdb
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.testDatabase.resources
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.GenerateResource.cache
+C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.CreateDatabase.resources
+C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.GenerateResource.cache
+C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.UpdateDatabase.resources

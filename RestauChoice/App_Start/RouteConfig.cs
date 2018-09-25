@@ -18,6 +18,25 @@ namespace RestauChoice
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "VoirResto",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "VoirResto", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "GetTest",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "GetTest", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Index02",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "Index02", id = UrlParameter.Optional }
+            );
+
         }
     }
 }
