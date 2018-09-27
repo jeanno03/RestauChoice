@@ -7,13 +7,13 @@ namespace RestauChoice.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateDatabase : IMigrationMetadata
+    public sealed partial class CreateRestaurant : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateRestaurant));
         
         string IMigrationMetadata.Id
         {
-            get { return "201809252005421_CreateDatabase"; }
+            get { return "201809271113152_CreateRestaurant"; }
         }
         
         string IMigrationMetadata.Source

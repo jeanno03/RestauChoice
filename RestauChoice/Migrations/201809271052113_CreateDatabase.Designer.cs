@@ -7,13 +7,13 @@ namespace RestauChoice.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UpdateDatabase : IMigrationMetadata
+    public sealed partial class CreateDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201809252011066_UpdateDatabase"; }
+            get { return "201809271052113_CreateDatabase"; }
         }
         
         string IMigrationMetadata.Source

@@ -20,17 +20,38 @@ namespace RestauChoice.Models
             bdd.Dispose();
         }
 
-
-
-        public void TestVote()
+        public TheUser TestConnection(Visitor visitor)
         {
-            DateTime da = DateTime.Now;
-            Vote vo01 = new Vote(da,1);
-            TheUser th01 = new TheUser("AA", "AA", "AA", "AA");
-            vo01.TheUser = th01;
-            bdd.TheUsers.Add(th01);
-            bdd.Votes.Add(vo01);
-            bdd.SaveChanges();
+            try
+            {
+
+
+                TheUser theUserTest = bdd.TheUsers.Where(t => t.Login.Equals(visitor.Login)).SingleOrDefault();
+                if (visitor.Mdp.Equals(theUserTest.Mdp))
+                {
+                    return theUserTest;
+                }
+            }catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return null;
+        }
+
+        public TheUser CreateUser(TheUser theUser)
+        {
+            TheUser theUserBase = bdd.TheUsers.Where(t => t.Login.Equals(theUser.Login)).SingleOrDefault();
+            if (theUserBase != null)
+            {
+                return null;
+            }
+            else
+            {
+                bdd.TheUsers.Add(theUser);
+                bdd.SaveChanges();
+                return theUser;
+            }
+            
         }
 
         public void EssaiRetau()
@@ -41,6 +62,13 @@ namespace RestauChoice.Models
             bdd.Restaurants.Add(re01);
             bdd.Restaurants.Add(re02);
             bdd.Restaurants.Add(re03);
+            bdd.SaveChanges();
+        }
+
+        public void CreateResto(string nom, string adresse)
+        {
+            Restaurant re01 = new Restaurant(nom, adresse);
+            bdd.Restaurants.Add(re01);
             bdd.SaveChanges();
         }
 

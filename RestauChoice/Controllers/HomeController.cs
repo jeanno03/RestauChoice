@@ -10,43 +10,31 @@ namespace RestauChoice.Controllers
 {
     public class HomeController : Controller
     {
-        //private AppDbContext db = new AppDbContext();
 
-        public ActionResult Index()
+        public ActionResult Index(Visitor visitor)
         {
-            //TheUser th01 = new TheUser("login", "mdp", "nom", "prenom");         
-            //Visitor vi01 = new Visitor("login", "mdp");
-
-            //db.TheUsers.Add(th01);
-            //db.Visitors.Add(vi01);
-            //db.SaveChanges();
-
-            //using(IDal dal = new Dal())
-            //{
-            //    dal.TestVote();
-            //    dal.EssaiRetau();
-            //}
-
-            //ViewData["message"] = "Bonjour depuis le contrôleur";
-            //ViewData["date"] = DateTime.Now;
-            //Restaurant r = new Restaurant { Nom = "La bonne fourchette", Adresse = "1234" };
 
             using (IDal dal = new Dal())
             {
-                //List<Restaurant> ListeDesRestos = dal.GetRestaurants();
+                //add user
+  
+                //add resto
+                //dal.EssaiRetau();
+            }
 
-                
+            using (IDal dal = new Dal())
+            {
 
                 AccueilViewModel vm = new AccueilViewModel
                 {
 
 
-                    Message = "Bonjour depuis le contrôleur",
+                    Message = "Bonjour nous sommes le",
                     Date = DateTime.Now,
-                    Resto = new Restaurant { Nom = "La bonne fourchette", Adresse = "1234" },
                     ListeDesRestos = dal.GetRestaurants(),
-                    
-            };
+                    TheUsers = dal.TestConnection(visitor),
+
+                };
                 
                 return View(vm);
 
@@ -55,18 +43,62 @@ namespace RestauChoice.Controllers
                 
         }
 
-        public ActionResult Index02()
+        public ActionResult PageConnexion()
         {
-
-            using (IDal dal = new Dal())
-            {
-                List<Models.Restaurant> listeDesRestos = dal.GetRestaurants();
-                //le 2 correspond a l id qui sera afficher par défault
-                ViewBag.ListeDesRestos = new SelectList(listeDesRestos, "RestaurantId", "Nom",2);
-            }
-            return View("Index02");
+            return View();
         }
 
+        public ActionResult TestConnexion(Visitor visitor)
+        {
+            using (IDal dal = new Dal())
+            {
+                TheUser userTest = dal.TestConnection(visitor);
+                if (userTest!=null)
+                {
+                    AccueilViewModel vm = new AccueilViewModel
+                    {
+
+                        TheUsers = userTest,
+
+                    };
+                    return View(vm);
+                }
+                else
+                {
+                    return View("Error");
+                }
+
+            }
+
+        }
+
+        public ActionResult CreateTheUser()
+        {
+            return View();
+
+        }
+
+        public ActionResult ValidateCreateTheUser(TheUser theUser)
+        {
+            using (IDal dal = new Dal())
+            {
+                TheUser userTest = dal.CreateUser(theUser);
+                if (userTest != null)
+                {
+                    AccueilViewModel vm = new AccueilViewModel
+                    {
+
+                        TheUsers = userTest,
+
+                    };
+                    return View(vm);
+                }
+                else
+                {
+                    return View("Error");
+                }
+            }
+        }
 
             public ActionResult VoirResto()
         {
@@ -81,10 +113,10 @@ namespace RestauChoice.Controllers
             return View("Resto");
         }
 
-        public ActionResult Connection()
-        {
-            return View("Connection");
-        }
+        //public ActionResult Connection()
+        //{
+        //    return View("Connection");
+        //}
 
         //[HttpPost]
         //public ActionResult TesterConnection(Visitor visitor)

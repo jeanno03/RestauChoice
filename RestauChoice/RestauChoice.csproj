@@ -153,23 +153,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CommentsController.cs" />
-    <Compile Include="Controllers\EvenementsController.cs" />
+    <Compile Include="Controllers\ConnexionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RestaurantsController.cs" />
-    <Compile Include="Controllers\TheTypesController.cs" />
-    <Compile Include="Controllers\VisitorsController.cs" />
-    <Compile Include="Controllers\VotesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809252005421_CreateDatabase.cs" />
-    <Compile Include="Migrations\201809252005421_CreateDatabase.Designer.cs">
-      <DependentUpon>201809252005421_CreateDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201809271052113_CreateDatabase.cs" />
+    <Compile Include="Migrations\201809271052113_CreateDatabase.Designer.cs">
+      <DependentUpon>201809271052113_CreateDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809252011066_UpdateDatabase.cs" />
-    <Compile Include="Migrations\201809252011066_UpdateDatabase.Designer.cs">
-      <DependentUpon>201809252011066_UpdateDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201809271113152_CreateRestaurant.cs" />
+    <Compile Include="Migrations\201809271113152_CreateRestaurant.Designer.cs">
+      <DependentUpon>201809271113152_CreateRestaurant.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -224,47 +220,23 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Comments\Create.cshtml" />
-    <Content Include="Views\Comments\Delete.cshtml" />
-    <Content Include="Views\Comments\Details.cshtml" />
-    <Content Include="Views\Comments\Edit.cshtml" />
-    <Content Include="Views\Comments\Index.cshtml" />
-    <Content Include="Views\Evenements\Create.cshtml" />
-    <Content Include="Views\Evenements\Delete.cshtml" />
-    <Content Include="Views\Evenements\Details.cshtml" />
-    <Content Include="Views\Evenements\Edit.cshtml" />
-    <Content Include="Views\Evenements\Index.cshtml" />
+    <Content Include="Views\Home\Resto.cshtml" />
+    <Content Include="Views\Connexion\Index.cshtml" />
+    <Content Include="Views\Home\PageConnexion.cshtml" />
+    <Content Include="Views\Home\TestConnexion.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Restaurants\Create.cshtml" />
     <Content Include="Views\Restaurants\Delete.cshtml" />
     <Content Include="Views\Restaurants\Details.cshtml" />
     <Content Include="Views\Restaurants\Edit.cshtml" />
     <Content Include="Views\Restaurants\Index.cshtml" />
-    <Content Include="Views\Votes\Create.cshtml" />
-    <Content Include="Views\Votes\Delete.cshtml" />
-    <Content Include="Views\Votes\Details.cshtml" />
-    <Content Include="Views\Votes\Edit.cshtml" />
-    <Content Include="Views\Votes\Index.cshtml" />
-    <Content Include="Views\Types\Create.cshtml" />
-    <Content Include="Views\Types\Delete.cshtml" />
-    <Content Include="Views\Types\Details.cshtml" />
-    <Content Include="Views\Types\Edit.cshtml" />
-    <Content Include="Views\Types\Index.cshtml" />
-    <Content Include="Views\Visitors\Create.cshtml" />
-    <Content Include="Views\Visitors\Delete.cshtml" />
-    <Content Include="Views\Visitors\Details.cshtml" />
-    <Content Include="Views\Visitors\Edit.cshtml" />
-    <Content Include="Views\Visitors\Index.cshtml" />
-    <Content Include="Views\TheTypes\Create.cshtml" />
-    <Content Include="Views\TheTypes\Delete.cshtml" />
-    <Content Include="Views\TheTypes\Details.cshtml" />
-    <Content Include="Views\TheTypes\Edit.cshtml" />
-    <Content Include="Views\TheTypes\Index.cshtml" />
-    <Content Include="Views\Home\Connection.cshtml" />
-    <Content Include="Views\Home\Resto.cshtml" />
-    <Content Include="Views\Home\Index02.cshtml" />
+    <Content Include="Views\Home\CreateTheUser.cshtml" />
+    <Content Include="Views\Home\ValidateCreateTheUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Accueil\" />
+    <Folder Include="Views\Header\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -280,11 +252,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809252005421_CreateDatabase.resx">
-      <DependentUpon>201809252005421_CreateDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809271052113_CreateDatabase.resx">
+      <DependentUpon>201809271052113_CreateDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809252011066_UpdateDatabase.resx">
-      <DependentUpon>201809252011066_UpdateDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809271113152_CreateRestaurant.resx">
+      <DependentUpon>201809271113152_CreateRestaurant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

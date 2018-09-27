@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -13,10 +14,13 @@ namespace RestauChoice.Models
         //private string login;
         //private string mdp;
 
-        public int VisitorId { get; set; }
+        //public int VisitorId { get; set; }
         [Required(ErrorMessage = "Le Login est obligatoire")]
+        [Display(Name ="Login")]
+        [Key]
         public string Login { get; set; }
         [Required(ErrorMessage = "Le mot de passe est obligatoire")]
+        [Display(Name = "Mot de passe")]
         public string Mdp { get; set; }
 
 

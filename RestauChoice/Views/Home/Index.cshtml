@@ -8,63 +8,27 @@
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
-
+<div>
+    @Html.Partial("~/Views/Home/TestConnexion.cshtml")
+</div>
+<br />
+<ul>
+    <li>
+        @Html.ActionLink("Se Connecter", "PageConnexion", "Home")
+    </li>
+    <li>
+        @Html.ActionLink("Créer un utilisateur", "createTheUser", "Home")
+    </li>
+</ul>
 <p>
-    @Html.ActionLink("Se Connecter", "Connection")
 </p>
 
 <div>
-    Je suis la vue index
+    @Html.LabelFor(model => model.Date)
+    @Model.Date.ToString("dd/MM/yyyy")
 </div>
-<ul>
-    <li>@Model.Message</li>
-    <li>@Model.Date.ToString("dd/MM/yyyy")</li>
-    <li>@Model.Resto.Nom</li>
-    <li>@Model.Resto.Adresse</li>
-</ul>
 
-<div>Je suis la vue index</div>
-<input type="text" id="nom" value="@Model.Resto.Nom" />
-<input type="text" id="adresse" value="@Model.Resto.Adresse" />
-<input type="submit" value="Envoyer" />
-
-<div>Je suis la vue index</div>
-@Html.TextBox("nom", Model.Resto.Nom, new { style = "color:red" })
-@Html.TextBox("adresse", Model.Resto.Adresse)
-<input type="submit" value="Envoyer" />
-
-<div>Je suis la vue index</div>
-@{Html.BeginForm("Index", "Home");}
-@Html.Label("estMajeur", "Cochez la case si vous êtes <strong>majeur</strong>")
-@Html.CheckBox("estMajeur", true)
-<input type="submit" value="Envoyer" />
-@{Html.EndForm();}
-
-<div>Je suis la vue index</div>
-@{Html.BeginForm("Index02", "Home", FormMethod.Get);}
-@Html.Label("estMajeur", "Cochez la case si vous êtes <strong>majeur</strong>")
-@Html.CheckBox("estMajeur", true)
-<input type="submit" value="Envoyer" />
-@{Html.EndForm();}
-
-
-<div>Je suis la vue index</div>
-@using (Html.BeginForm("Index", "Home"))
-{
-    @Html.Label("estMajeur", "Cochez la case si vous êtes majeur")
-    @Html.CheckBox("estMajeur", true)
-    <input type="submit" value="Envoyer" />
-}
-
-<div>Je suis la vue index lambda</div>
-@Html.LabelFor(model => model.Resto.Nom)
-@Html.TextBoxFor(model => model.Resto.Nom, new { style = "color:red" })
-@Html.LabelFor(model => model.Resto.Adresse)
-@Html.TextBoxFor(model => model.Resto.Adresse)
-<input type="submit" value="Envoyer" />
-
-
-
+<p>Les restaurants (ps le lien ne fonctionne pas c'est un exemple)</p>
 <table>
     <tr>
         <th>
@@ -73,6 +37,9 @@
         <th>
             Adresse
         </th>
+        <th>
+            Action
+        </th>
     </tr>
     @{
         foreach (var resto in Model.ListeDesRestos)
@@ -80,11 +47,19 @@
             <tr>
                 <td>@resto.Nom</td>
                 <td>@resto.Adresse</td>
+                <td>@Html.ActionLink("Modifier le restaurant", "ModifierRestaurant", "Restaurant", new { id = @resto.RestaurantId }, null)</td>
             </tr>
         }
     }
 
 </table>
+<p>Méthode par défault :</p>
+<ul>
+    <li>
+        @Html.ActionLink("Les Restaurants", "Index", "Restaurants")
+    </li>
+</ul>
+
 
 <div class="row">
     <div class="col-md-4">
