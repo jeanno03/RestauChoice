@@ -12,6 +12,6 @@ namespace RestauChoice.Models
         List<Restaurant> GetRestaurants();
         void CreateResto(string nom, string adresse);
         TheUser TestConnection(Visitor visitor);
-        TheUser CreateUser(TheUser theUser);
+        TheUser CreateUser(Models.TheUser TheUsers);
     }
 }

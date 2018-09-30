@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 
@@ -38,20 +39,40 @@ namespace RestauChoice.Models
             return null;
         }
 
-        public TheUser CreateUser(TheUser theUser)
+        public TheUser CreateUser(Models.TheUser TheUsers)
         {
-            TheUser theUserBase = bdd.TheUsers.Where(t => t.Login.Equals(theUser.Login)).SingleOrDefault();
-            if (theUserBase != null)
+ 
+            try
             {
-                return null;
+                TheUser theUserBase = bdd.TheUsers.Where(t => t.Login.Equals(TheUsers.Login)).SingleOrDefault();
+                //System.Diagnostics.Debug.WriteLine("L'user est dans la base");
+                if (theUserBase == null)
+                {
+                    bdd.TheUsers.Add(TheUsers);
+                    try
+                    {
+
+                        System.Diagnostics.Debug.WriteLine("l'user n'est pas dans la base");
+                        bdd.SaveChanges();
+                        return TheUsers;
+                    }
+                    catch(DbEntityValidationException db)
+                    {
+                        System.Diagnostics.Debug.WriteLine(db);
+                    }
+
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("l'user est dans la base");
+                }
+
             }
-            else
+            catch(NullReferenceException ex)
             {
-                bdd.TheUsers.Add(theUser);
-                bdd.SaveChanges();
-                return theUser;
+                System.Diagnostics.Debug.WriteLine(ex);
             }
-            
+            return null;
         }
 
         public void EssaiRetau()

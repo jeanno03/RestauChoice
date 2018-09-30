@@ -78,12 +78,27 @@ namespace RestauChoice.Controllers
 
         }
 
-        public ActionResult ValidateCreateTheUser(TheUser theUser)
+    //    @Html.LabelFor(model => model.TheUsers.Login)
+    //@Html.TextBoxFor(model => model.TheUsers.Login, new { style = "color:red" })
+    //@Html.LabelFor(model => model.TheUsers.Mdp)
+    //@Html.TextBoxFor(model => model.TheUsers.Mdp)
+    //@Html.LabelFor(model => model.TheUsers.Nom)
+    //@Html.TextBoxFor(model => model.TheUsers.Nom)
+    //@Html.LabelFor(model => model.TheUsers.Prenom)
+    //@Html.TextBoxFor(model => model.TheUsers.Prenom)
+
+        public ActionResult ValidateCreateTheUser(Models.TheUser TheUsers)
         {
             using (IDal dal = new Dal())
-            {
-                TheUser userTest = dal.CreateUser(theUser);
-                if (userTest != null)
+            {           
+                System.Diagnostics.Debug.WriteLine("login :" + TheUsers.Login + " mdp : " + TheUsers.Mdp + " nom : " + TheUsers.Nom + " prenom : "+ TheUsers.Prenom);
+                TheUser userTest = dal.CreateUser(TheUsers);
+                if (userTest == null)
+                {
+                    return View("Error");
+
+                }
+                else
                 {
                     AccueilViewModel vm = new AccueilViewModel
                     {
@@ -92,10 +107,7 @@ namespace RestauChoice.Controllers
 
                     };
                     return View(vm);
-                }
-                else
-                {
-                    return View("Error");
+
                 }
             }
         }
