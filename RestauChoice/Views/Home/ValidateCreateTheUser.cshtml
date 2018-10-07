@@ -1,0 +1,11 @@
+﻿@model RestauChoice.ViewModels.AccueilViewModel
+@{
+    ViewBag.Title = "ValidateCreateTheUser";
+}
+
+<h2>ValidateCreateTheUser</h2>
+
+<p>
+    Bravo <br /> @if (@Model.TheUsers != null)
+    {@Model.TheUsers.Nom @Model.TheUsers.Prenom} a été créé!!!
+</p>

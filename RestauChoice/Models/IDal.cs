@@ -8,7 +8,12 @@ namespace RestauChoice.Models
 {
     interface IDal:IDisposable
     {
-        void TestVote();
-        bool TesterConnection(string login, string mdp);
+
+        void EssaiRetau();
+        List<Restaurant> GetRestaurants();
+        void CreateResto(string nom, string adresse);
+        TheUser TestConnection(Visitor visitor);
+        TheUser CreateUser(Models.TheUser TheUsers);
+
     }
 }

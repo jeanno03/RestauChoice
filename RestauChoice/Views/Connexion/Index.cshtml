@@ -1,0 +1,17 @@
+﻿@model RestauChoice.ViewModels.AccueilViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("TestConnexion", "Connexion"))
+{
+
+    @Html.LabelFor(model => model.Visitor.Login)
+    @Html.TextBoxFor(model => model.Visitor.Login, new { style = "color:red" })
+    @Html.LabelFor(model => model.Visitor.Mdp)
+    @Html.TextBoxFor(model => model.Visitor.Mdp)
+
+    <input type="submit" value="Envoyer" />
+}
+

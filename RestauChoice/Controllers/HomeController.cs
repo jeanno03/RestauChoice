@@ -1,4 +1,5 @@
 ﻿using RestauChoice.Models;
+using RestauChoice.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,50 +10,135 @@ namespace RestauChoice.Controllers
 {
     public class HomeController : Controller
     {
-        //private AppDbContext db = new AppDbContext();
 
-        public ActionResult Index()
+        public ActionResult Index(Visitor visitor)
         {
-            //TheUser th01 = new TheUser("login", "mdp", "nom", "prenom");         
-            //Visitor vi01 = new Visitor("login", "mdp");
 
-            //db.TheUsers.Add(th01);
-            //db.Visitors.Add(vi01);
-            //db.SaveChanges();
-
-            using(IDal dal = new Dal())
+            using (IDal dal = new Dal())
             {
-                dal.TestVote();
+                //add user
+  
+                //add resto
+                //dal.EssaiRetau();
+            }
+
+            using (IDal dal = new Dal())
+            {
+
+
+                AccueilViewModel vm = new AccueilViewModel
+                {
+
+
+                    Message = "Bonjour nous sommes le",
+                    Date = DateTime.Now,
+                    ListeDesRestos = dal.GetRestaurants(),
+                    TheUsers = dal.TestConnection(visitor),
+
+                };
+                
+                return View(vm);
 
             }
 
+                
+        }
 
+        public ActionResult PageConnexion()
+        {
             return View();
         }
 
-        public ActionResult Connection()
+        public ActionResult TestConnexion(Visitor visitor)
         {
-            return View("Connection");
-        }
-
-        [HttpPost]
-        public ActionResult TesterConnection(Visitor visitor)
-        {
-            bool monTest;
             using (IDal dal = new Dal())
             {
-                monTest = dal.TesterConnection(visitor.Login, visitor.Mdp);
-                if (monTest)
+                TheUser userTest = dal.TestConnection(visitor);
+                if (userTest!=null)
                 {
-                    return View("Connection");
+                    AccueilViewModel vm = new AccueilViewModel
+                    {
+
+                        TheUsers = userTest,
+
+                    };
+                    return View(vm);
                 }
                 else
                 {
-                    return View();
+                    return View("Error");
+                }
+
+
+            }
+
+        }
+
+        public ActionResult CreateTheUser()
+        {
+            return View();
+
+        }
+
+    //    @Html.LabelFor(model => model.TheUsers.Login)
+    //@Html.TextBoxFor(model => model.TheUsers.Login, new { style = "color:red" })
+    //@Html.LabelFor(model => model.TheUsers.Mdp)
+    //@Html.TextBoxFor(model => model.TheUsers.Mdp)
+    //@Html.LabelFor(model => model.TheUsers.Nom)
+    //@Html.TextBoxFor(model => model.TheUsers.Nom)
+    //@Html.LabelFor(model => model.TheUsers.Prenom)
+    //@Html.TextBoxFor(model => model.TheUsers.Prenom)
+
+        public ActionResult ValidateCreateTheUser(Models.TheUser TheUsers)
+        {
+            using (IDal dal = new Dal())
+            {           
+                System.Diagnostics.Debug.WriteLine("login :" + TheUsers.Login + " mdp : " + TheUsers.Mdp + " nom : " + TheUsers.Nom + " prenom : "+ TheUsers.Prenom);
+                TheUser userTest = dal.CreateUser(TheUsers);
+                if (userTest == null)
+                {
+                    return View("Error");
+
+                }
+                else
+                {
+                    AccueilViewModel vm = new AccueilViewModel
+                    {
+
+                        TheUsers = userTest,
+
+                    };
+                    return View(vm);
+
                 }
             }
-            
         }
+
+
+            public ActionResult VoirResto()
+        {
+            using (IDal dal = new Dal())
+            {
+                ViewData["message"] = "Bonjour depuis le contrôleur";
+                ViewData["date"] = DateTime.Now;
+                ViewData["resto"] = new Restaurant { Nom = "Choucroute party", Adresse = "St Denis" };    
+
+                List<Restaurant> listesDesRestaurants = dal.GetRestaurants();
+            }
+            return View("Resto");
+        }
+
+        //public ActionResult Connection()
+        //{
+        //    return View("Connection");
+        //}
+
+        //[HttpPost]
+        //public ActionResult TesterConnection(Visitor visitor)
+        //{
+
+        //}
+
 
         public ActionResult About()
         {

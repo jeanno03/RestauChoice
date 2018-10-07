@@ -13,6 +13,7 @@ namespace RestauChoice
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+  
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
@@ -20,10 +21,13 @@ namespace RestauChoice
             );
 
             routes.MapRoute(
-                name: "TesterConnection",
-                url: "{login}/{mdp}",
-                defaults: new { controller = "Home", action = "TesterConnection" }
+
+                name: "VoirResto",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "VoirResto", id = UrlParameter.Optional }
             );
+
+
         }
     }
 }

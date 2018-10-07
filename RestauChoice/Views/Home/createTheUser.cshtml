@@ -1,0 +1,23 @@
+﻿@model RestauChoice.ViewModels.AccueilViewModel
+@{
+    ViewBag.Title = "CreateTheUser";
+}
+
+<h2>CreateTheUser</h2>
+
+@using (Html.BeginForm("ValidateCreateTheUser", "Home"))
+{
+
+    @Html.LabelFor(model => model.TheUsers.Login)
+    @Html.TextBoxFor(model => model.TheUsers.Login, new { style = "color:red" })
+    @Html.LabelFor(model => model.TheUsers.Mdp)
+    @Html.TextBoxFor(model => model.TheUsers.Mdp)
+    @Html.LabelFor(model => model.TheUsers.Nom)
+    @Html.TextBoxFor(model => model.TheUsers.Nom)
+    @Html.LabelFor(model => model.TheUsers.Prenom)
+    @Html.TextBoxFor(model => model.TheUsers.Prenom)
+
+    <input type="submit" value="Envoyer" />
+}
+
+
