@@ -159,13 +159,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809271052113_CreateDatabase.cs" />
-    <Compile Include="Migrations\201809271052113_CreateDatabase.Designer.cs">
-      <DependentUpon>201809271052113_CreateDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809271113152_CreateRestaurant.cs" />
-    <Compile Include="Migrations\201809271113152_CreateRestaurant.Designer.cs">
-      <DependentUpon>201809271113152_CreateRestaurant.cs</DependentUpon>
+    <Compile Include="Migrations\201810071629268_Create Database.cs" />
+    <Compile Include="Migrations\201810071629268_Create Database.Designer.cs">
+      <DependentUpon>201810071629268_Create Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -233,6 +229,7 @@
     <Content Include="Views\Restaurants\Index.cshtml" />
     <Content Include="Views\Home\CreateTheUser.cshtml" />
     <Content Include="Views\Home\ValidateCreateTheUser.cshtml" />
+    <Content Include="Views\Home\TestRestaurantWithType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -253,11 +250,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809271052113_CreateDatabase.resx">
-      <DependentUpon>201809271052113_CreateDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809271113152_CreateRestaurant.resx">
-      <DependentUpon>201809271113152_CreateRestaurant.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810071629268_Create Database.resx">
+      <DependentUpon>201810071629268_Create Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

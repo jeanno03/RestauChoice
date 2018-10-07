@@ -202,9 +202,8 @@ C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoic
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.CopyComplete
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.dll
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.pdb
-C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.GenerateResource.cache
 C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.CreateDatabase.resources
 C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.GenerateResource.cache
 C:\Users\MINI PC JEANNORY 64\source\repos\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.CreateRestaurant.resources
 C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.CreateDatabase.resources
-C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.Migrations.CreateRestaurant.resources
+C:\Users\jeanno\source\repos\Git\RestauChoice\RestauChoice\obj\Debug\RestauChoice.csproj.GenerateResource.cache

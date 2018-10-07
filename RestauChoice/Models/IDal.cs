@@ -15,5 +15,7 @@ namespace RestauChoice.Models
         TheUser TestConnection(Visitor visitor);
         TheUser CreateUser(Models.TheUser TheUsers);
 
+        void DataTestRestoType();
+        Restaurant TestRestaurantWithType();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
@@ -100,5 +101,22 @@ namespace RestauChoice.Models
             return bdd.Restaurants.ToList();
         }
 
+        //For the test I save 1 restaurant and 1 type
+        public void DataTestRestoType()
+        {
+            Restaurant restaurant = new Restaurant() {Nom="resto01",Adresse="Paris" };
+            TheType theType = new TheType() { Nom = "Fast food" };
+            restaurant.TheType = theType;
+            bdd.Restaurants.Add(restaurant);
+            bdd.SaveChanges();
+
+        }
+
+        public Restaurant TestRestaurantWithType()
+        {
+            Restaurant restaurant = bdd.Restaurants.OrderByDescending(r => r.RestaurantId).Take(1).Include(r => r.TheType).SingleOrDefault();
+            //Restaurant restaurant = bdd.Restaurants.OrderByDescending(r => r.RestaurantId).Take(1).SingleOrDefault();
+            return restaurant;
+        }
     }
 }

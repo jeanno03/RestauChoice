@@ -49,6 +49,28 @@ namespace RestauChoice.Controllers
             return View();
         }
 
+        public ActionResult CreateDataTestOne()
+        {
+            using (IDal dal = new Dal())
+            {
+                dal.DataTestRestoType();
+            }
+                return View("Index");
+        }
+
+        public ActionResult TestRestaurantWithType()
+        {
+            using (IDal dal = new Dal())
+            {
+                AccueilViewModel vm = new AccueilViewModel
+                {
+                    Resto = dal.TestRestaurantWithType()
+                };
+                return View(vm);
+            }
+            
+        }
+
         public ActionResult TestConnexion(Visitor visitor)
         {
             using (IDal dal = new Dal())
