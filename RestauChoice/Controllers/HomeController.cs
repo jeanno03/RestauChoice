@@ -23,6 +23,7 @@ namespace RestauChoice.Controllers
             using(IDal dal = new Dal())
             {
                 dal.TestVote();
+
             }
 
 
@@ -34,11 +35,24 @@ namespace RestauChoice.Controllers
             return View("Connection");
         }
 
-        //[HttpPost]
-        //public ActionResult TesterConnection(Visitor visitor)
-        //{
-
-        //}
+        [HttpPost]
+        public ActionResult TesterConnection(Visitor visitor)
+        {
+            bool monTest;
+            using (IDal dal = new Dal())
+            {
+                monTest = dal.TesterConnection(visitor.Login, visitor.Mdp);
+                if (monTest)
+                {
+                    return View("Connection");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            
+        }
 
         public ActionResult About()
         {

@@ -9,5 +9,6 @@ namespace RestauChoice.Models
     interface IDal:IDisposable
     {
         void TestVote();
+        bool TesterConnection(string login, string mdp);
     }
 }

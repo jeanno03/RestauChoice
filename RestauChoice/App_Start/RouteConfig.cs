@@ -18,6 +18,12 @@ namespace RestauChoice
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "TesterConnection",
+                url: "{login}/{mdp}",
+                defaults: new { controller = "Home", action = "TesterConnection" }
+            );
         }
     }
 }

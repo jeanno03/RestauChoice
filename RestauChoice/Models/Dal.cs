@@ -26,6 +26,15 @@ namespace RestauChoice.Models
             bdd.SaveChanges();
         }
 
+        public Boolean TesterConnection(string login, string mdp)
+        {
+        if (login == "1" && mdp == "1")
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void Dispose()
         {
             bdd.Dispose();
